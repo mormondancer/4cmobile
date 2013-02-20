@@ -1,0 +1,88 @@
+// AJAX - Asynchronous JavaScript And XML
+
+// AJAX uses combination of:
+// 	- XMLHttpRequest Object
+// 	- JavaScript/DOM
+// 	- CSS
+// 	- XML
+
+// STEPS
+
+// 1. Create XMLHttpRequest Object 111111111111111111111111111111111111111111
+
+	// Declare variable to hold XMLHttpRequest Object.
+	var xmlhttp;
+
+	// Check browser.
+	if(window.XMLHttpRequest) {
+		// IE7+, Firefox, Chrome, Opera, Safari.
+		xmlhttp = new XMLHttpRequest();
+	} else {
+		// Older browsers of IE.
+		xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+	}
+
+// 2. Send Request to Server 2222222222222222222222222222222222222222222222222
+
+	// object.open(method, url, async)
+	// 		method 	-> GET or POST.
+	// 		url 		-> File location on server.
+	// 		async 	-> TRUE (Async) or FALSE (Sync)
+
+	xmlhttp.open("GET","file_name.txt?name=value",TRUE);
+
+	// object.send(string)
+	// 		string 	-> only need if method is POST.
+
+	xmlhttp.send();
+
+// 3. Server Response 3333333333333333333333333333333333333333333333333333333
+
+	// object.onreadystatechange stores a function to call when response is ready.
+	// object.readyState and object.status returns the status of the the XMLHttpRequest object.
+	// 		object.readyState returns:
+	// 			0 -> request not initialized.
+	// 			1 -> server connection established.
+	// 			2 -> request recieved.
+	// 			3 -> processing request.
+	// 			4 -> request finnished and response is ready.
+	// 		object.status returns:
+	// 			200 -> "OK".
+	// 			404 -> Page not found.
+	// object.responseText returns string format.
+	// object.responseXML returns XML format.
+
+	xmlhttp.onreadystatechange = function() {
+		if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+
+		// code goes here...
+		// -----------------------------------------------------------------
+		// Example if response is string format:
+		// -----------------------------------------------------------------
+				// Writes the string within a div.
+			document.getElementById("myDiv").innerHTML = xmlhttp.responseText;
+
+		// -----------------------------------------------------------------
+		// Example if response is XML format:
+		// -----------------------------------------------------------------
+			// // gets XML response
+			// xmlDoc = xmlhttp.responseXML;
+			// // declare empty string variable.
+			// txt = "";
+			// // get all the XML elements with the tag name of "tagName".
+			// // store a live NodeList from xmlDoc object into x.
+			// x = xmlDoc.getElementsByTagName("CD");
+			// // loop through each element and separate them for display.
+			// for (i=0;i<x.length;i++) {
+			//   txt = txt + x[i].childNodes[0].nodeValue + "<br>";
+			// }
+			// // print values into the div.
+			// document.getElementById("myDiv").innerHTML = txt;
+
+		} // end of if statement to check response status.
+	} // end of onreadystatechange function.
+
+
+
+
+

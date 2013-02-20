@@ -1,0 +1,40 @@
+/**********************************************************
+
+HEADER
+	#header
+		-> #coinImage
+		 , #coin
+		 , #title
+
+CONTENT
+	#petDetailsDiv
+		-> #prevPetButton
+		 , #nextPetButton
+		 , #petSpecies
+		 , #petName
+		 , #petStrength
+		 , #petIntelligence
+		 , #petVitality
+		 , #petMana
+		 , #petLevel
+		 , #petExperience
+
+	#createFormDiv
+		-> #prevPetButton
+		 , #nextPetButton
+
+FOOTER
+	#controlPanel
+		-> #homeButton
+		 , #leaderBoardButton
+		 , #backpackButton
+		 , #exploreButton
+
+
+**********************************************************/
+
+
+
+
+
+

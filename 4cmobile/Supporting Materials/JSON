@@ -1,0 +1,39 @@
+// JSON - JavaScript Object Notation.
+
+// JSON is used for storing and exchanging text information.
+// JSON is smaller than XML, and faster and easier to parse.
+
+// The file type for JSON files is ".json"
+// The MIME type for JSON text is "application/json"
+
+// JSON Syntax Rules:
+	// Data is in name/value pairs 	->
+			"name":"value"
+	// Data is separated by comma		->
+			"name":"value" , "name2":"value2"
+	// Curly brackets holds objects ->
+			{ "name":"value" , "name2":"value2" }
+	// Square brackets holds arrays ->
+			{ "names": [ { "name":"value" , "name2":"value2" }
+								 , { "name":"value" , "name2":"value2" } ] }
+
+// However, you can use JavaScript and JSON together.
+	// Create names array in JS useing JSON syntax to populate the array.
+	 	var names =
+	 	[ { "name_1":"value_1a" , "name_2":"value_2a" }
+	 	, { "name_1":"value_1b" , "name_2":"value_2b" } ];
+		// names[0].name_2 will print out value_2a.
+		// names[0].name_2 = "new_value" to set a new value to the array.
+
+	// JS string to Object.
+		// Set JSON object to JS string.
+		var txt = '{ "names": [ { "name":"value1a" , "name2":"value2a" } , { "name":"value1b" , "name2":"value2b" } ] }';
+
+		// Create JS object from JS string using JS eval() function.
+		var JS_object = eval("(" + txt + ")");
+		// It is SAFER and FASTER to use the JSON.parse(string).
+		var JS_object = JSON.parse(txt);
+
+
+
+
